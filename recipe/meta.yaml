@@ -1,0 +1,35 @@
+{% set data = load_setup_py_data() %}
+
+package:
+  name: mars_lab
+  version: {{ data.get('version') }}
+  
+source:
+  path: ../
+
+build:
+  noarch: python
+  entry_points:
+    - mars-lab = mars_lab.labapp:main
+    - mars-labextension = mars_lab.labextensionapp:main
+
+requirements:
+  build:
+    - python
+    - pip
+    - nodejs >=8.0,<10.0
+    - jupyterlab =0.35
+  run:
+    - python
+    - jupyterlab
+
+    # Python packages corresponding to extensions installed in build.sh
+    - ipywidgets >=7.2
+    - plotly =3.4.2
+    - sidecar =0.2
+
+about:
+  home: https://github.com/bcminch/mars_lab
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: {{ data.get('description') }}
