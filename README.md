@@ -1,6 +1,29 @@
 # JupyterLab mars_lab
 
-This project is my implementation of jupyterlab_delux: https://github.com/jonmmease/jupyterlab_delux
+This project is my implementation of jupyterlab_delux. To create your own custom pre-built distribution of Jupyter Lab, check out https://github.com/jonmmease/jupyterlab_delux
+
+Anaconda link: https://anaconda.org/bcminch/mars_lab
+
+## Getting Started
+
+Create an environment, activate it, and run:
+
+    conda install -c bcminch mars_lab=0.2
+    
+Once installed, run mars-lab with the command `mars-lab`. Extra arguments that `jupyter lab` accepts should work for mars-lab as well. For example, to run in mars-lab without automatically launching a browser, use:
+
+    mars-lab --no-browser
+    
+## Overview
+
+The mars-lab distribution is intended to allow full access to the interactive data visualization content of plotly.py supplemented with jupyterlab-sidecar without needing to go through the steps to install the jupyterlab extensions for these packages. Documentation for these projects can be found here:
+
+https://github.com/plotly/plotly.py
+https://github.com/jupyter-widgets/jupyterlab-sidecar
+
+## Additional Information
+
+The following is taken from the jupyterlab_delux README.md and modified to apply specifically to mars-lab:
 
 Conda recipe to package JupyterLab with the following preinstalled extensions:
 
@@ -16,9 +39,9 @@ The package created has two commands:
 This means that, if the user has `nodejs` installed and internet access, he can manage
 extensions as with the standard JupyterLab.
 
-## Use Cases
+### Use Cases
 
-### Standardized distribution
+#### Standardized distribution
 
 An organization could create their own build of JupyterLab with a predefined
 set of extensions.
@@ -27,13 +50,13 @@ Note: If users are operating in an online environment, they
 would still be able to add/remove extensions themselves after installation.
 In this case, they will have to use the `mars-labextension` command instead of the standard `jupyter labextension` one.
 
-### Offline Installation
+#### Offline Installation
 
 This build of JupyterLab with predefined extensions could be installed in an 
 offline environment, without requiring *nodejs* or access to an
 *npm* repository.
 
-## Limitations
+### Limitations
 
 This approach does not address the open question of how individual extensions 
 should be distributed as conda packages and installed in an offline 
@@ -42,7 +65,7 @@ environment.
 See [jupyterlab/jupyterlab#2065](https://github.com/jupyterlab/jupyterlab/issues/2065)
 for discussion on that front.
 
-## Instructions
+### Instructions
 
 1. Adapt the template to bundle the extensions you want
     1. Add the JupyterLab extension installation commands in `recipe/bld.bat` and `recipe/build.sh`
@@ -97,7 +120,7 @@ using the following command (provided he has all dependencies fullfilled):
 conda install mars_lab
 ```
 
-## References
+### References
 
 * [JupyterLab](https://jupyterlab.readthedocs.io/en/stable)
 * [conda packaging](https://conda.io/docs/user-guide/tasks/building-packages/index.html)
