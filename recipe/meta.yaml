@@ -25,7 +25,7 @@ requirements:
 
     # Python packages corresponding to extensions installed in build.sh
     - ipywidgets >=7.2
-    - plotly =3.4.2
+    - plotly =3.10.0
     - sidecar =0.2
 
 about:

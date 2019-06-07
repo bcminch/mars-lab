@@ -6,7 +6,7 @@ from setuptools import setup
 setup_args = dict(
     name             = 'mars_lab',
     description      = 'Pre-built Jupyter Lab with Plotly and Sidecar',
-    version          = '0.1.0',
+    version          = '0.2.0',
     packages         = ['mars_lab', ],
     entry_points     = {'console_scripts': [
                             'mars-lab = mars_lab.labapp:main',
