@@ -1,5 +1,7 @@
 # JupyterLab mars_lab
 
+This project is my implementation of jupyterlab_delux: https://github.com/jonmmease/jupyterlab_delux
+
 Conda recipe to package JupyterLab with the following preinstalled extensions:
 
 - IPywidgets
